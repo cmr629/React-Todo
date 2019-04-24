@@ -19,11 +19,21 @@ export default class TodoList extends React.Component {
   // Render all items on list and add completed class if item is completed
   renderList() {
     let html = [];
+    if (this.props.globalState.useSearch){
+      this.props.globalState.listSearch.forEach(item => {
+        let classCompleted = item['completed'] === true ? 'item completed' : 'item';
+        console.log(item['completed']);
+        html.push(<span className={classCompleted} key={item['id']} id={item['id']} onClick={ () => {this.itemClicked(item['id'])}}> {item["task"]} </span>);
+      });
+    }
+    else{
     this.props.globalState.todoListItems.forEach(item => {
       let classCompleted = item['completed'] === true ? 'item completed' : 'item';
       console.log(item['completed']);
       html.push(<span className={classCompleted} key={item['id']} id={item['id']} onClick={ () => {this.itemClicked(item['id'])}}> {item["task"]} </span>);
     });
+  }
+ 
 
     return html;
   }

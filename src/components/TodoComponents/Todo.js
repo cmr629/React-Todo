@@ -9,10 +9,12 @@ export default class Todo extends React.Component {
 
         // Set state with array of list items and current text value for input text
         this.state = {textValue: '',
-                      todoListItems: []};
+                      todoListItems: [],
+                      listSearch: [],
+                      useSearch: false};
 
         if (window.localStorage.getItem('listState') !== null)
-        this.state = JSON.parse(window.localStorage.getItem('listState'));;
+        this.state = JSON.parse(window.localStorage.getItem('listState'));
         // Bind method to allow global state
         this.setGlobalState = this.setGlobalState.bind(this);
     }

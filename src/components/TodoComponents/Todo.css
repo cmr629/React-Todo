@@ -21,25 +21,45 @@
 
 .input{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-evenly;
+}
+
+.input-area{
+    display: flex;
+    flex-direction: row;
+    width:100%;
 }
 .input-box{
     padding: 1%;
     border: 0px solid gray;
     border-radius: 2px;
-    width: 250x;
+    width: 400px;
     height: 25px;
     font-size: 1.25rem;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.5),
     0 3px 8px 0 rgba(0, 0, 0, 0.3);
+    margin-right: 2%;
+}
+
+.button-group{
+    display: flex;
+    flex-direction: row;
+    padding: 2%;
 }
 
 .btn{
     border: 2px solid gray;
     border-radius: 5px;
-    font-size: 1rem;
+    font-size: 0.85rem;
 }
+
+.btn-grp{
+    margin: 1%;
+    width: 150px;
+    height: 30px;
+}
+
 .item-list{
     width: 100%;
     display: flex;
@@ -53,4 +73,5 @@
 
 .completed{
     text-decoration: line-through;
+    color: red;
 }
