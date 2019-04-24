@@ -54,6 +54,10 @@
     font-size: 0.85rem;
 }
 
+.add-btn {
+    width: 50px;
+    height: 35px;
+}
 .btn-grp{
     margin: 1%;
     width: 150px;
