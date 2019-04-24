@@ -2,10 +2,6 @@ import React from "react";
 
 export default class TodoList extends React.Component {
 
-    constructor(props){
-        super(props);
-    }
-
    // Set completed to true or false depending on current state
    itemClicked(id){
        let state = this.props.globalState;
