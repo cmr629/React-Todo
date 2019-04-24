@@ -21,7 +21,7 @@ export default class Todo extends React.Component {
 
   render() {
     return (
-      <div className='container'>
+      <div className='todo'>
         <TodoList globalState={this.state} setGlobalState={this.setGlobalState}/>
         <TodoForm globalState={this.state} setGlobalState={this.setGlobalState}/>
       </div>
