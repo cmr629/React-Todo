@@ -10,6 +10,14 @@ export default class TodoForm extends React.Component {
 
     clearButtonClicked(event){
         event.preventDefault();
+
+        let state = this.props.globalState;
+
+        this.todoList = this.todoList.filter((item) => {
+            return !item.completed;
+        });
+ 
+        this.props.setGlobalState(state => ({todoListItems: this.todoList}));
         
     }
 
