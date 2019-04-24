@@ -12,6 +12,7 @@ export default class TodoForm extends React.Component {
         });
  
         this.props.setGlobalState(state);
+        window.localStorage.setItem('listState', JSON.stringify(this.props.globalState));
     }
 
     // Add item to list
@@ -26,6 +27,7 @@ export default class TodoForm extends React.Component {
   
         this.refs.inputField.value = '';
         this.props.setGlobalState(state);
+        window.localStorage.setItem('listState', JSON.stringify(this.props.globalState));
     }
 
   render() {

@@ -11,6 +11,8 @@ export default class Todo extends React.Component {
         this.state = {textValue: '',
                       todoListItems: []};
 
+        if (window.localStorage.getItem('listState') !== null)
+        this.state = JSON.parse(window.localStorage.getItem('listState'));;
         // Bind method to allow global state
         this.setGlobalState = this.setGlobalState.bind(this);
     }
