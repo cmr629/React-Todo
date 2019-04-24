@@ -4,7 +4,7 @@ export default class TodoForm extends React.Component {
  
     constructor(props){
         super(props);
-        this.state = {textValue: ''};
+       
         this.todoList = [];
     }
 
@@ -14,17 +14,15 @@ export default class TodoForm extends React.Component {
 
     addButtonClicked(event){
         event.preventDefault();
-        console.log(this.textValue);
        
-        this.todoList.push({'task': this.textValue,
+        this.todoList.push({'task': this.refs.inputField.value,
                             'id': Date.now(),
                             'completed': false
         });
-        this.state.textValue = '';
+  
         this.refs.inputField.value = '';
         
-        this.setState(this.todoList);
-        debugger;
+        this.props.setGlobalState(state => ({todoListItems: this.todoList}));
     }
 
   render() {
