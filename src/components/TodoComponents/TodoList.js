@@ -1,2 +1,19 @@
-// your components will all go in this `component` directory.
-// feel free to change this component.js into TodoList.js
+import React from 'react';
+
+export default class TodoList extends React.Component {
+ 
+    renderList(){
+        this.state.todoListItems.forEach((item) =>{
+            return (
+                <span id={item['id']}> {item['value']} </span>
+            );
+        });
+    }
+  render() {
+    return (
+      <div>
+        this.renderList();
+      </div>
+    );
+  }
+}
