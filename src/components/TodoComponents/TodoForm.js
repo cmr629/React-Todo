@@ -48,7 +48,7 @@ export default class TodoForm extends React.Component {
         let state = this.props.globalState;
         state.listSearch = [];
         state.listSearch = state.todoListItems.filter((item) => {
-            return item['task'].includes(this.refs.inputField.value);
+            return (item['task']).toUpperCase().includes(this.refs.inputField.value.toUpperCase());
         });
         
         if (state.listSearch.length > 0)
