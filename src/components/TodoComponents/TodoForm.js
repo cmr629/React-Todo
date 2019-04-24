@@ -10,6 +10,7 @@ export default class TodoForm extends React.Component {
 
     clearButtonClicked(event){
         event.preventDefault();
+        
     }
 
     addButtonClicked(event){
@@ -27,7 +28,7 @@ export default class TodoForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='input'>
         <input type='text' ref='inputField' className='input-box'/>
         <button className='add-btn btn' onClick={this.addButtonClicked.bind(this)}>Add Todo </button>
         <button className='clear-btn btn' onClick={this.clearButtonClicked.bind(this)}>Clear Completed </button>

@@ -7,8 +7,7 @@ export default class TodoList extends React.Component {
     }
 
    itemClicked(id){
-     
-
+    
        let state = this.props.globalState;
 
        state.todoListItems.forEach(item => {
@@ -16,12 +15,11 @@ export default class TodoList extends React.Component {
             item['completed'] = !(item['completed']);
             return;
         }
-    
       });
 
       this.props.setGlobalState(state);
-  
    }
+
   renderList() {
     let html = [];
     this.props.globalState.todoListItems.forEach(item => {
@@ -33,6 +31,6 @@ export default class TodoList extends React.Component {
     return html;
   }
   render() {
-    return <div>{this.renderList()}</div>;
+    return <div className='item-list'>{this.renderList()}</div>;
   }
 }

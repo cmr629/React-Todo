@@ -1,6 +1,7 @@
 import React from 'react';
 import TodoList from './TodoList';
 import TodoForm from './TodoForm';
+import './Todo.css';
 
 export default class Todo extends React.Component {
     constructor(){
@@ -20,7 +21,7 @@ export default class Todo extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='container'>
         <TodoList globalState={this.state} setGlobalState={this.setGlobalState}/>
         <TodoForm globalState={this.state} setGlobalState={this.setGlobalState}/>
       </div>
