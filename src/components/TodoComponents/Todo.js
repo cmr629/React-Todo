@@ -7,12 +7,12 @@ export default class Todo extends React.Component {
     constructor(){
         super();
 
+        // Set state with array of list items and current text value for input text
         this.state = {textValue: '',
                       todoListItems: []};
 
-    
+        // Bind method to allow global state
         this.setGlobalState = this.setGlobalState.bind(this);
-
     }
 
     setGlobalState(state){

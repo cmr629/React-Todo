@@ -8,6 +8,7 @@ export default class TodoForm extends React.Component {
         this.todoList = [];
     }
 
+    // Clear complete items from list
     clearButtonClicked(event){
         event.preventDefault();
 
@@ -21,6 +22,7 @@ export default class TodoForm extends React.Component {
         
     }
 
+    // Add item to list
     addButtonClicked(event){
         event.preventDefault();
        

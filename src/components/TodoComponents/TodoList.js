@@ -6,8 +6,8 @@ export default class TodoList extends React.Component {
         super(props);
     }
 
+   // Set completed to true or false depending on current state
    itemClicked(id){
-    
        let state = this.props.globalState;
 
        state.todoListItems.forEach(item => {
@@ -20,6 +20,7 @@ export default class TodoList extends React.Component {
       this.props.setGlobalState(state);
    }
 
+  // Render all items on list and add completed class if item is completed
   renderList() {
     let html = [];
     this.props.globalState.todoListItems.forEach(item => {
