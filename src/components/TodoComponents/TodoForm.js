@@ -24,6 +24,9 @@ export default class TodoForm extends React.Component {
     // Add item to list
     addButtonClicked(event){
         event.preventDefault();
+
+        if (this.refs.inputField.value.length === 0) return;
+        
         let state = this.props.globalState;
         state.useSearch = false;
         state.todoListItems.push({'task': this.refs.inputField.value,
@@ -41,7 +44,7 @@ export default class TodoForm extends React.Component {
         event.preventDefault();
 
         if (this.refs.inputField.value.length === 0) return;
-        
+
         let state = this.props.globalState;
         state.listSearch = [];
         state.listSearch = state.todoListItems.filter((item) => {
