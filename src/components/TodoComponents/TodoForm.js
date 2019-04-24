@@ -2,36 +2,30 @@ import React from 'react';
 
 export default class TodoForm extends React.Component {
  
-    constructor(props){
-        super(props);
-       
-        this.todoList = [];
-    }
-
     // Clear complete items from list
     clearButtonClicked(event){
         event.preventDefault();
+        let state = this.props.globalState;
 
-        this.todoList = this.todoList.filter((item) => {
+        state.todoListItems = state.todoListItems.filter((item) => {
             return !item.completed;
         });
  
-        this.props.setGlobalState(state => ({todoListItems: this.todoList}));
-        
+        this.props.setGlobalState(state);
     }
 
     // Add item to list
     addButtonClicked(event){
         event.preventDefault();
-       
-        this.todoList.push({'task': this.refs.inputField.value,
+        let state = this.props.globalState;
+
+        state.todoListItems.push({'task': this.refs.inputField.value,
                             'id': Date.now(),
                             'completed': false
         });
   
         this.refs.inputField.value = '';
-        
-        this.props.setGlobalState(state => ({todoListItems: this.todoList}));
+        this.props.setGlobalState(state);
     }
 
   render() {
