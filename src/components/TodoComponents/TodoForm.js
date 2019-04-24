@@ -39,6 +39,9 @@ export default class TodoForm extends React.Component {
      // Search item
      searchButtonClicked(event){
         event.preventDefault();
+
+        if (this.refs.inputField.value.length === 0) return;
+        
         let state = this.props.globalState;
         state.listSearch = [];
         state.listSearch = state.todoListItems.filter((item) => {
